@@ -2,9 +2,8 @@
 
 > 白板
 
-## get develpoer information and app information
+## 获取开发者信息和App应用信息
 
-### 获取开发者信息
 前往[anyRTC 云平台](https://www.anyrtc.io)获取开发者信息，并创建一个app应用。
 
 ``` bash
@@ -15,7 +14,7 @@ const APP_KEY = "";//app应用KEY
 const APP_TOKEN = "";//app应用TOKEN
 ```
 
-### 设置自定义数据
+## 设置自定义数据
 
 ``` bash
 # App.vue
