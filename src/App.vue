@@ -34,21 +34,26 @@ const DEV_ID = "";
 const APP_ID = "";
 const APP_KEY = "";
 const APP_TOKEN = "";
-const DOMAIN = "";
+const APP_DOMAIN = "";
 
-import Board from '@/assets/board';
+import { Board } from 'anyrtc-whiteboard';
 
 export default {
   name: 'App',
   data () {
     return {
       pen: null,
-      mId: '',//房间号，均为系统唯一
+      anyrtcId: '',//房间号，均为系统唯一
       fileId: '',//文件ID，均为系统唯一
       userId: '',//用户ID，均为系统唯一
       nBgIndex: 1,
       nBgTotal: 1,
-      backgroundList: []
+      backgroundList: [
+        {
+          board_background: 'https://www.teameeting.cn/static/images/team_section.jpg',
+          board_number: 1
+        }
+      ]
     }
   },
 
@@ -105,11 +110,11 @@ export default {
 
     that.pen = new Board(document.getElementById("myCanvas"));
 
-    that.pen.initEngineWithAnyRTCInfo(DEV_ID, APP_ID, APP_KEY, APP_TOKEN, "").then(res => {
+    that.pen.initEngineWithAnyRTCInfo(DEV_ID, APP_ID, APP_KEY, APP_TOKEN, APP_DOMAIN).then(res => {
       console.log("initEngineWithAnyRTCInfo", res);
 
       if (res.code === 0) {
-        that.pen.initWithRoomID(that.mId, that.fileId, that.userId, that.backgroundList).then(res => {
+        that.pen.initWithRoomID(that.anyrtcId, that.fileId, that.userId, that.backgroundList).then(res => {
           console.log("initWithRoomID res", res);
           if (res.code === 0) {
             let data = res.data;

@@ -1,5 +1,5 @@
 {
-  "name": "anyrtc_board",
+  "name": "anyRTC-WhiteBoard-Web",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "DyncMark <chenpeng@dync.cc>",
@@ -15,6 +15,7 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "anyrtc-whiteboard": "0.0.4",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
