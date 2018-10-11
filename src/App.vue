@@ -30,10 +30,10 @@
 
 <script>
 //开发者信息，https://www.anyrtc.io
-const DEV_ID = "95878050";
-const APP_ID = "anyrtc5FrikUFHlNal";
-const APP_KEY = "LuPdDV6dO4bxHTKazezxLMNFSI2FJ8G9entqoM8McT0";
-const APP_TOKEN = "dfca4c8bc6884f513942155469022393";
+const DEV_ID = "";
+const APP_ID = "";
+const APP_KEY = "";
+const APP_TOKEN = "";
 const APP_DOMAIN = "";
 
 import { Board } from 'anyrtc-whiteboard';
@@ -43,15 +43,9 @@ export default {
   data () {
     return {
       pen: null,
-      // anyrtcId: '',//房间号，均为系统唯一
-      // fileId: '',//文件ID，均为系统唯一
+      anyrtcId: '',//房间号，均为系统唯一
+      fileId: '',//文件ID，均为系统唯一
       userId: 'web',//用户ID，均为系统唯一
-      // anyrtcId: '80536884',
-      // fileId: '20180713191511226855',
-      // anyrtcId: '2018221',
-      // fileId: '987123',
-      anyrtcId: '2018929',
-      fileId: '123456',
       nBgIndex: 1,
       nBgTotal: 1,
       backgroundList: [
