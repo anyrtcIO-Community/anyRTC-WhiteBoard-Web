@@ -51,4 +51,9 @@ npm run dev
 npm run build
 ```
 
-想要了解更多请点击 [anyRTC 云平台](https://www.anyrtc.io) 或者 [更多SDK](https://github.com/anyRTC)。
+想要了解更多请点击 [anyRTC 云平台](https://www.anyrtc.io) 或者 [更多SDK](https://github.com/anyRTC)，如需要带封装UI的demo的请联系我们。
+
+## 技术支持 
+
+> 加QQ技术咨询群：580477436 (一群) 554714720 (二群)  
+> 欢迎加入[anyRTC社区](https://bbs.anyrtc.io) 和我们一起探讨WebRTC技术以及解决集成问题。
