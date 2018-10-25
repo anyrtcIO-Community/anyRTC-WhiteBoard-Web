@@ -1,5 +1,7 @@
 # anyRTC-WhiteBoard-Web
 
+![效果图](/static/demo.png)    
+
 > 网页白板SDK，跨平台请看 [***Android***](https://github.com/anyRTC/anyRTC-WhiteBoard-Android)、 [***iOS***](https://github.com/anyRTC/anyRTC-WhiteBoard-iOS)
 
 ## 获取开发者信息和App应用信息
