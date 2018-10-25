@@ -6,6 +6,8 @@ import App from './App';
 
 Vue.config.productionTip = false;
 
+import 'anyrtc-whiteboard/lib/index.css'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
