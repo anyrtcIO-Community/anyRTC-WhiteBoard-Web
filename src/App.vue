@@ -2,6 +2,8 @@
   <div id="app">
     <h1 :style="{'margin-bottom': '80px'}">anyRTC 互动白板内置UI DEMO 体验</h1>
 
+    <p :style="{'text-align':'center'}">{{nBgIndex}}/{{nBgTotal}}</p>
+
     <div id="myCanvas" style="width:800px; height:450px; margin: 0 auto 40px; box-shadow: 0 10px 20px 0 rgba(0,0,0,.5)"></div>
 
     <button type="button" @click="prePage">上一页</button>
@@ -17,6 +19,7 @@
     <button type="button" @click="clearAll">清空所有画板</button>
     <button type="button" @click="destoryBoard">清空所以画板及所有背景图片</button>
     <button type="button" @click="upload">更新画板背景图片</button>
+    <button type="button" @click="sendMessage">sendMessage</button>
 
     <select name="" id="pType" @change="handleType">
       <option :value="1">涂鸦</option>
@@ -73,6 +76,9 @@ export default {
   },
 
   methods: {
+    sendMessage () {
+      this.pen.sendMessage('Hello World!');
+    },
     prePage () {
       this.pen.prePage(true);
     },
@@ -292,11 +298,14 @@ export default {
 
     });
 
-    that.pen.on("onBoardPageChange", (curPage, totalPage, backgroundUrl, backgroundList) => {
-      console.log("onBoardPageChange", curPage, totalPage, backgroundUrl, backgroundList);
+    that.pen.on("onBoardPageChange", (curPage, totalPage, backgroundUrl) => {
+      console.log("onBoardPageChange", curPage, totalPage, backgroundUrl);
       that.nBgIndex = curPage;
       that.nBgTotal = totalPage;
-      that.backgroundList = backgroundList;
+    });
+
+    that.pen.on("onBoardMessage", strMessage => {
+      console.log("onBoardMessage", strMessage);
     });
 
     //如果是主持人进行画板录制

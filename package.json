@@ -11,7 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "anyrtc-whiteboard": "0.0.12",
+    "anyrtc-whiteboard": "0.0.20",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
