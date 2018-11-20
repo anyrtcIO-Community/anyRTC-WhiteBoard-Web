@@ -2,6 +2,7 @@
   <div id="app">
     <h1 :style="{'margin-bottom': '80px'}">anyRTC 互动白板内置UI DEMO 体验</h1>
 
+    <div v-html="msghtml"></div>
     <p :style="{'text-align':'center'}">{{nBgIndex}}/{{nBgTotal}}</p>
 
     <div id="myCanvas" style="width:800px; height:450px; margin: 0 auto 40px; box-shadow: 0 10px 20px 0 rgba(0,0,0,.5)"></div>
@@ -19,7 +20,7 @@
     <button type="button" @click="clearAll">清空所有画板</button>
     <button type="button" @click="destoryBoard">清空所以画板及所有背景图片</button>
     <button type="button" @click="upload">更新画板背景图片</button>
-    <button type="button" @click="sendMessage">sendMessage</button>
+    <button type="button" @click="sendMessage">发送广播消息</button>
 
     <select name="" id="pType" @change="handleType">
       <option :value="1">涂鸦</option>
@@ -65,7 +66,8 @@ export default {
           board_background: 'https://www.teameeting.cn/static/images/team_section.jpg',
           board_number: 1
         }
-      ]
+      ],
+      msghtml: ''
     }
   },
 
@@ -168,7 +170,7 @@ export default {
         console.log(res);
 
         var fileId = "88888888";//文件ID（保证唯一）
-        var anyRTCId = "666666";//房间号（保证唯一）
+        var anyRTCId = "123456";//房间号（保证唯一）
         var userId = "web";//用户id（保证唯一）
         var backgroundList= [
           {
@@ -306,6 +308,7 @@ export default {
 
     that.pen.on("onBoardMessage", strMessage => {
       console.log("onBoardMessage", strMessage);
+      that.msghtml += strMessage + '<br/>';
     });
 
     //如果是主持人进行画板录制
@@ -331,6 +334,22 @@ export default {
       //监听错误
       console.log(code);
     });
+
+    window.onbeforeunload = function (e) {
+      e = e || window.event;
+
+      // 兼容IE8和Firefox 4之前的版本
+      if (e) {
+        e.returnValue = '关闭提示';
+      }
+
+      // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
+      return '关闭提示';
+    };
+
+    window.onunload = function () {
+      that.pen.sendMessage('close!');
+    };
   },
 };
 </script>
