@@ -96,7 +96,7 @@
   </div>
 </template>
 <script>
-import Board from 'ar-whiteboard';
+import ArWhiteBoard from 'ar-whiteboard';
 import 'ar-whiteboard/lib/index.css';
 
 import config from "../config.js";
@@ -237,7 +237,7 @@ export default {
     let that = this;
     that.roomId = that.$route.query.whiteboardId;
     that.$nextTick(() => {
-      that.Board = new Board("myCanvas");
+      that.Board = new ArWhiteBoard("myCanvas");
       that.addLog('info', `方法：initEngineWithARInfo，画板初始化`);
       //配置私有云白板服务器，如果使用公有云请忽略
       config.whiteBoardServeUrl && that.Board.configServerUrl(config.whiteBoardServeUrl);
