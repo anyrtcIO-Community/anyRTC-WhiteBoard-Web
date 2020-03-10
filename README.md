@@ -59,7 +59,7 @@ import 'ar-whiteboard/lib/index.css';
 
 
 ## 三、API接口文档
-### ARMeet 类方法介绍
+### ARBoard 类方法介绍
 #### 1.初始化实例
 ##### 示例
 ```
@@ -341,7 +341,7 @@ Board.leave();
 ##### 说明
 离开画板（房间）。
 
-### ARMeetKitDelegate 接口类
+### ARBoardKitDelegate 接口类
 #### 1. 画板断开连接
 ##### 示例
 ```
