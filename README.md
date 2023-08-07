@@ -1,5 +1,12 @@
 # 重要提醒
-anyRTC 对该版本已经不再维护，如需互动白板方案，请前往官网联系客服获取。
+
+anyRTC 对该版本已经下架，如需白板请使用升级版白板。
+
+# 新版本
+
+- Github: https://github.com/anyRTC/ARBoard-Web
+- 快速开始：https://docs.anyrtc.io/cn/WhiteBoard/run/whiteboard_demo/run_demo_whiteboard_web
+- API 文档：https://docs.anyrtc.io/cn/WhiteBoard/api-ref/whiteboard_web/overview
 
 **公司网址： [www.anyrtc.io](https://www.anyrtc.io)**
 
